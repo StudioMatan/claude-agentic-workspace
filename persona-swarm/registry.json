@@ -1,0 +1,32 @@
+{
+  "max_active": 6,
+  "agents": [
+    {
+      "name": "linkedin-agent",
+      "file": "subagents/linkedin-agent.md",
+      "scope": "LinkedIn profile copy, post drafts, about section, headline variants",
+      "status": "active",
+      "created": "2026-06-28",
+      "last_used": "2026-06-28",
+      "uses": 1
+    },
+    {
+      "name": "github-agent",
+      "file": "subagents/github-agent.md",
+      "scope": "StudioMatan profile README, repo sanitization, repo descriptions, public portfolio curation",
+      "status": "active",
+      "created": "2026-06-28",
+      "last_used": null,
+      "uses": 0
+    },
+    {
+      "name": "content-agent",
+      "file": "subagents/content-agent.md",
+      "scope": "Project write-ups, case studies, technical articles for LinkedIn featured or blog",
+      "status": "active",
+      "created": "2026-06-28",
+      "last_used": null,
+      "uses": 0
+    }
+  ]
+}
