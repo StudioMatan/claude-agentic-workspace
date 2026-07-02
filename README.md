@@ -53,8 +53,21 @@ Full design: [ARCHITECTURE.md](ARCHITECTURE.md)
 ## Start here
 
 1. [flows/falcon-claude-soar/architecture.md](flows/falcon-claude-soar/architecture.md) - the centerpiece: automated detection-to-report pipeline
-2. [rules/secret-handling.md](rules/secret-handling.md) - how agents get credentials without ever holding them
-3. [domains/security-falcon/triage-workflow.md](domains/security-falcon/triage-workflow.md) - the triage methodology the agents follow
+2. [SECURITY.md](SECURITY.md) - the threat model of this system and the full connector inventory: every external system, its auth, its scope
+3. [rules/secret-handling.md](rules/secret-handling.md) - how agents get credentials without ever holding them
+4. [domains/security-falcon/triage-workflow.md](domains/security-falcon/triage-workflow.md) - the triage methodology the agents follow
+
+## Use this yourself
+
+The sanitized placeholders are the template - this clones as a working starting point:
+
+1. `git clone https://github.com/StudioMatan/claude-agentic-workspace`
+2. Create your vault items (1Password or equivalent), copy each `.env.op.example` to `.env.op`, point the `op://` references at your items - no code changes
+3. Copy the `SKILL.md` folders you want from `domains/*/` into your project's `.claude/skills/`
+4. Replace the placeholders (`example.com`, `Tenant-A`, `10.0.1.x`) with your environment's values
+5. Point the `./data/` paths at wherever your exports land
+
+Every script is parameterized - domains, OUs, and paths are arguments, not hardcoded values. Read [SECURITY.md](SECURITY.md) before wiring any connector.
 
 ## Honesty notes
 
