@@ -1,0 +1,8 @@
+# local working files - never published
+STATE.md
+_NOTES.md
+**/_NOTES.md
+.env.op
+.DS_Store
+__pycache__/
+*.pyc
