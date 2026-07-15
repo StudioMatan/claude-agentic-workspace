@@ -4,7 +4,7 @@ An orchestrated multi-agent security operations workspace - detection triage, id
 
 ## Who built this
 
-I'm Matan Alon - a security engineer running identity, endpoint, email, and cloud security for a ~1,400-person global company. This repo is the actual system I work with, sanitized for sharing: an orchestrated set of AI agents that handle the repetitive half of security operations, so I can spend my time on the judgment half.
+I'm Matan Alon - an IT systems engineer who runs hybrid infrastructure and identity for a ~1,400-person global company, and is responsible for securing what he runs: endpoints, email, identity, and cloud. This repo is the actual system I work with, sanitized for sharing: an orchestrated set of AI agents that handle the repetitive half of security operations, so I can spend my time on the judgment half.
 
 Every agent here solves a problem I actually had - triaging EDR detections at volume, syncing HR data into Active Directory without breaking anyone, figuring out which of four systems knows a device's real owner. Nothing is theoretical.
 
