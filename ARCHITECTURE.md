@@ -14,7 +14,7 @@ LAYER 1 - MASTER ROUTER                     always-on, ~1 page
   Decides WHICH domain owns a task. Nothing else.
         |
 LAYER 2 - DOMAIN ORCHESTRATORS              loaded when their domain is hit
-  security-falcon | identity-ad | email-exchange | devices | cloud
+  security-falcon | identity-ad | email-exchange | devices | cloud | networks
   Own their subagents and skills. The router never micromanages;
   domains never route outside themselves.
         |

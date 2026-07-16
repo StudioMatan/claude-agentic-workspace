@@ -44,6 +44,7 @@ Full design: [ARCHITECTURE.md](ARCHITECTURE.md)
 | [domains/email-exchange/](domains/email-exchange/) | Mailbox triage skill, gateway-bypass detection methodology (FromIP/PTR) |
 | [domains/devices/](domains/devices/) | 4-source device correlation and owner identity resolution |
 | [domains/cloud/](domains/cloud/) | AWS volume forensics runbook, Azure SSO app review checklist |
+| [domains/networks/](domains/networks/) | Read-only firewall policy review (Juniper SRX → Meraki migration assessment) |
 | [flows/falcon-claude-soar/](flows/falcon-claude-soar/) | The SOAR pipeline: Falcon -> PagerDuty -> Claude -> Slack, with architecture |
 | [rules/](rules/) | Always-on policy: secret handling (1Password op-run pattern), data sanitization |
 | [docs/](docs/) | Standalone teaching docs: credential architecture, email gateway defense-in-depth |

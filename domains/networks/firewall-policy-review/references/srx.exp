@@ -1,0 +1,30 @@
+#!/usr/bin/expect -f
+# One-shot SRX command runner. Reads SRX_HOST/SRX_USER/SRX_PASS/SRX_CMDS from env
+# (password injected by `op run`, never on disk). SRX_CMDS is semicolon-separated.
+# Read-only discipline: only ever pass `show ...` commands in SRX_CMDS.
+set timeout 30
+log_user 1
+set host $env(SRX_HOST)
+set user $env(SRX_USER)
+set pass $env(SRX_PASS)
+set cmds $env(SRX_CMDS)
+
+spawn ssh -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/dev/null $user@$host
+
+expect {
+    -re {[Pp]assword:} { send "$pass\r" }
+    timeout { puts "TIMEOUT waiting for password prompt"; exit 1 }
+}
+expect {
+    -re {> $}    { }
+    -re {[Pp]assword:} { puts "AUTH FAILED"; exit 2 }
+    timeout { puts "TIMEOUT waiting for CLI prompt"; exit 1 }
+}
+send "set cli screen-length 0\r"
+expect -re {> $}
+foreach c [split $cmds ";"] {
+    send "$c\r"
+    expect -re {> $}
+}
+send "exit\r"
+expect eof

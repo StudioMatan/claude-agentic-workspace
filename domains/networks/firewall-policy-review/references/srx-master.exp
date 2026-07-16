@@ -1,0 +1,22 @@
+#!/usr/bin/expect -f
+# Establishes a persistent SSH ControlMaster socket so the password is entered ONCE.
+# Subsequent commands reuse the socket with no auth, until ControlPersist expires.
+# Env: SRX_HOST SRX_USER SRX_PASS SRX_SOCK  (password injected by `op run`).
+# NOTE: SRX_SOCK must be a SHORT path (Unix socket limit ~104 chars) - use $HOME/.fw.sock,
+#       NOT a long scratch-directory path.
+set timeout 30
+log_user 1
+set host $env(SRX_HOST)
+set user $env(SRX_USER)
+set pass $env(SRX_PASS)
+set sock $env(SRX_SOCK)
+
+spawn ssh -M -S $sock -o ControlPersist=30m \
+    -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/dev/null \
+    $user@$host "show system uptime | match \"Current time\""
+
+expect {
+    -re {[Pp]assword:} { send "$pass\r" }
+    timeout { puts "TIMEOUT waiting for password"; exit 1 }
+}
+expect eof

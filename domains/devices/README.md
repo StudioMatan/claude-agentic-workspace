@@ -9,6 +9,7 @@ Entity resolution applied to IT asset management: correlating four asset sources
 | [`device-correlation/SKILL.md`](device-correlation/SKILL.md) | The correlation skill - sources, run procedure, join rules, workbook output |
 | [`device-correlation/references/identity-resolution.md`](device-correlation/references/identity-resolution.md) | The six-rung fuzzy resolution ladder with its verification gate |
 | [`user-device-mapping.md`](user-device-mapping.md) | Compact owner-resolution ruleset and the owner taxonomy |
+| [`invgate-api/SKILL.md`](invgate-api/SKILL.md) | Live InvGate ITSM lookups: serial -> asset -> owner resolution, offboarding and returned-device checks, API gotchas |
 
 ## Highlights
 

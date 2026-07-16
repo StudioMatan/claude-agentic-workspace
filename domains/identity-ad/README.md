@@ -9,6 +9,7 @@ Active Directory identity operations: a monthly HR-to-AD sync run as an orchestr
 | [`hr-ad-sync/SKILL.md`](hr-ad-sync/SKILL.md) | The sync orchestrator: normalize -> diagnose gate -> ordered TEST/FULL pushes -> log review |
 | [`hr-ad-sync/remoting-subagent.md`](hr-ad-sync/remoting-subagent.md) | The execution subagent: WinRM/pypsrp from a Mac into the AD server, no RDP |
 | [`hr-ad-sync/references/`](hr-ad-sync/references/) | `normalize_adp.py` (feed adapter), `diagnose_feed.py` (pre-flight gate), `session_driver.py` + `step.py` + `ad_remote.py` (WinRM harness), column/OU mappings |
+| [`contractor-lifecycle/SKILL.md`](contractor-lifecycle/SKILL.md) | Monthly vendor-roster reconciliation: N rosters vs OU=Contractors, color-coded 3-sheet review workbook + short ticket reply |
 | [`change-process.md`](change-process.md) | Test-first protocol, logging requirements, post-run audit consolidation |
 | [`powershell-patterns.md`](powershell-patterns.md) | Hard-won gotchas: null-safe comparison, false-"Updated" bug, locale date traps, CSV column bleed |
 | [`ad-infrastructure.md`](ad-infrastructure.md) | Domain layout, OU structure, attribute conventions |
